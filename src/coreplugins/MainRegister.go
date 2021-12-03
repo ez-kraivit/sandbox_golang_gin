@@ -7,7 +7,7 @@ import (
 )
 
 func MainRegister(router *gin.Engine)gin.IRoutes{
-    var UserRouter = routes.UserRouter
+    UserRouter := routes.UserRouter
     userGroup := router.Group("/api/v1/users")
     UserRouter(userGroup)
     return router

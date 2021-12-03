@@ -6,5 +6,5 @@ import (
 )
 
 func UserRouter(router *gin.RouterGroup)gin.IRoutes{
-    return router.GET("/", controllers.UserController)
+    return router.GET("", controllers.UserController)
 }

@@ -1,19 +1,24 @@
 package main
 
 import (
-    "lab2/src/coreplugins"
+	"lab2/src/coreplugins"
 
-    "github.com/gin-gonic/gin"
+	"github.com/gin-gonic/gin"
 )
 
 func main() {
-
-    var Cors = coreplugins.CorsFunc
+    // Cors for cross origin allowance
+    Cors := coreplugins.CorsFunc
 	router := gin.Default()
     router.Use(Cors())
-    
-    var GoRegister = coreplugins.MainRegister
+
+    // Env variables 
+    EnvJSON := coreplugins.Env()
+
+    // Register Go
+    GoRegister := coreplugins.MainRegister
     GoRegister(router)
+	router.Run(EnvJSON.Port)
     
-	router.Run() // listen and serve on 0.0.0.0:8080 (for windows "localhost:8080")
 }
+
