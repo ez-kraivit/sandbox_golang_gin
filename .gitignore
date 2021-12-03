@@ -1,3 +1,4 @@
 go.sum
-documents/
+documents/*
 Dockerfile
+src/config/*.json
