@@ -7,6 +7,8 @@ import (
 )
 
 func main() {
+    // coreplugins.CronJobFunc()
+    
     // Cors for cross origin allowance
     Cors := coreplugins.CorsFunc
 	router := gin.Default()
