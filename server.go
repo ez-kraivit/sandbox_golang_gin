@@ -1,6 +1,7 @@
 package main
 
 import (
+    "log"
 	"lab2/src/coreplugins"
 
 	"github.com/gin-gonic/gin"
@@ -20,7 +21,7 @@ func main() {
     // Register Go
     GoRegister := coreplugins.MainRegister
     GoRegister(router)
-	router.Run(EnvJSON.Port)
+    log.Fatal(router.Run(EnvJSON.Domain+EnvJSON.Port))
     
 }
 
