@@ -1,7 +1,7 @@
 package main
 
 import (
-    "log"
+	"fmt"
 	"lab2/src/coreplugins"
 
 	"github.com/gin-gonic/gin"
@@ -21,7 +21,8 @@ func main() {
     // Register Go
     GoRegister := coreplugins.MainRegister
     GoRegister(router)
-    log.Fatal(router.Run(EnvJSON.Domain+EnvJSON.Port))
+    fmt.Println("Go server is running on ",EnvJSON.Domain+EnvJSON.Port)
+    router.Run(EnvJSON.Port)
     
 }
 

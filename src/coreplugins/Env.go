@@ -8,7 +8,7 @@ import (
 )
 
 func Env()interfaces.Env{
-    fileenv := "./src/config/dev.json"
+    fileenv := "./config/dev.json"
     var data []byte
     data, _ = ioutil.ReadFile(fileenv)
 
